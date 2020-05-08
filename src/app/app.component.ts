@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 type Note = [string, string];
 type Notes = Note[] & typeof NOTEMAP;
-type Scale = {
+export type Scale = {
   name: string;
   notes: Note[];
 };
@@ -50,25 +51,68 @@ NOTES.a = NOTES[9];
 NOTES.as = NOTES[10];
 NOTES.b = NOTES[11];
 
-const chromatic: Scale = {
-  name: "chromatic",
-  notes: [
-    NOTES.c,
-    NOTES.cs,
-    NOTES.d,
-    NOTES.ds,
-    NOTES.e,
-    NOTES.f,
-    NOTES.fs,
-    NOTES.g,
-    NOTES.gs,
-    NOTES.a,
-    NOTES.as,
-    NOTES.b,
-  ],
-};
-
-const SCALES: Scale[] = [chromatic];
+const SCALES: Scale[] = [
+  {
+    name: "Chromatic",
+    notes: [
+      NOTES.c,
+      NOTES.cs,
+      NOTES.d,
+      NOTES.ds,
+      NOTES.e,
+      NOTES.f,
+      NOTES.fs,
+      NOTES.g,
+      NOTES.gs,
+      NOTES.a,
+      NOTES.as,
+      NOTES.b,
+    ],
+  },
+  {
+    name: "Diatonic",
+    notes: [NOTES.c, NOTES.d, NOTES.e, NOTES.f, NOTES.g, NOTES.a, NOTES.b],
+  },
+  {
+    name: "Alphabetical",
+    notes: [NOTES.a, NOTES.b, NOTES.c, NOTES.d, NOTES.e, NOTES.f, NOTES.g],
+  },
+  {
+    name: "Alphachromatic",
+    notes: [
+      NOTES.a,
+      NOTES.b,
+      NOTES.c,
+      NOTES.d,
+      NOTES.e,
+      NOTES.f,
+      NOTES.g,
+      NOTES.a,
+      NOTES.as,
+      NOTES.b,
+      NOTES.c,
+      NOTES.cs,
+      NOTES.d,
+      NOTES.ds,
+      NOTES.e,
+      NOTES.f,
+      NOTES.fs,
+      NOTES.g,
+      NOTES.gs,
+      NOTES.a,
+      NOTES.as,
+      NOTES.b,
+      NOTES.c,
+      NOTES.cs,
+      NOTES.d,
+      NOTES.ds,
+    ],
+  },
+  {
+    name: "Pentatonic",
+    notes: [NOTES.c, NOTES.d, NOTES.e, NOTES.g, NOTES.a],
+  },
+];
 
 @Component({
   selector: "app-root",
@@ -78,15 +122,11 @@ const SCALES: Scale[] = [chromatic];
 export class AppComponent {
   title = "musical-cryptograms";
   SCALES = SCALES;
-  flatMode: 0 | 1 = 0;
-  name = "pandu";
+  name = "amyloftus";
 
-  toArray(s: string): string[] {
-    return Array.from(s);
-  }
-
-  toNoteName(letter: string, scale: Scale): string {
-    const i = (letter.charCodeAt(0) - 97) % scale.notes.length;
-    return scale.notes[i][this.flatMode];
+  constructor(private route: ActivatedRoute) {
+    route.fragment.subscribe((fragment) => {
+      this.name = fragment;
+    });
   }
 }

@@ -1,12 +1,3 @@
-<div *ngFor="let scale of SCALES">
-  <b>{{ scale.name }}</b>
-  <br />
-  <div class="note" *ngFor="let letter of toArray(name)">
-    <div class="top">
-      {{ letter }}
-    </div>
-    <div class="bottom">
-      {{ toNoteName(letter, scale) }}
-    </div>
-  </div>
+<div class="wrapper">
+  <scale *ngFor="let scale of SCALES" [scale]="scale" [name]="name"></scale>
 </div>

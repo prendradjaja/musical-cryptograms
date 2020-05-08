@@ -1,0 +1,54 @@
+:host {
+  display: block;
+  margin: 10px;
+}
+
+.wrapper {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid lightgray;
+}
+
+.starred {
+  background: skyblue;
+  border: 1px solid skyblue;
+  .top {
+    color: white;
+  }
+}
+
+.note {
+  display: inline-block;
+  width: 30px;
+}
+
+.top,
+.bottom {
+  margin-top: 5px;
+}
+
+.top {
+  // text-transform: uppercase;
+  color: skyblue;
+}
+
+button.toggle-flats {
+  margin-left: 10px;
+}
+
+.star {
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer;
+  user-select: none;
+  color: lightgray;
+}
+
+.starred .star {
+  color: yellow;
+}
+
+b {
+  cursor: pointer;
+  user-select: none;
+}
