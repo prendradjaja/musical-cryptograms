@@ -1,5 +1,5 @@
 <div class="wrapper" [ngClass]="{ starred: starred }">
-  <div class="star" (click)="toggleStarred()">★</div>
+  <!-- <div class="star" (click)="toggleStarred()">★</div> -->
   <b (click)="toggleStarred()">{{ scale.name }}</b>
   <button class="toggle-flats" (click)="toggleFlats()">
     {{ ["Sharps", "Flats"][flatMode] }}

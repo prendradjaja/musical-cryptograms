@@ -112,6 +112,26 @@ const SCALES: Scale[] = [
     name: "Pentatonic",
     notes: [NOTES.c, NOTES.d, NOTES.e, NOTES.g, NOTES.a],
   },
+  // {
+  //   name: "Diatonic from B",
+  //   notes: [NOTES.b, NOTES.c, NOTES.d, NOTES.e, NOTES.f, NOTES.g, NOTES.a],
+  // },
+  // {
+  //   name: "Diatonic from D",
+  //   notes: [NOTES.d, NOTES.e, NOTES.f, NOTES.g, NOTES.a, NOTES.b, NOTES.c],
+  // },
+  // {
+  //   name: "Diatonic from E",
+  //   notes: [NOTES.e, NOTES.f, NOTES.g, NOTES.a, NOTES.b, NOTES.c, NOTES.d],
+  // },
+  // {
+  //   name: "Diatonic from F",
+  //   notes: [NOTES.f, NOTES.g, NOTES.a, NOTES.b, NOTES.c, NOTES.d, NOTES.e],
+  // },
+  // {
+  //   name: "Diatonic from G",
+  //   notes: [NOTES.g, NOTES.a, NOTES.b, NOTES.c, NOTES.d, NOTES.e, NOTES.f],
+  // },
 ];
 
 @Component({
